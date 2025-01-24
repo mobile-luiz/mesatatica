@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+    <title>Escala de Jogadores - Mesa Tática</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo-principal">Escala de Jogadores</h1>
+        <div class="secao">
+            <!-- Escalação -->
+            <div class="escalacao">
+                <h2>Escalação</h2>
+                <table id="escalacao">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Posição</th>
+                            <th>Ações</th> <!-- Coluna para Editar e Excluir -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Jogadores serão inseridos aqui via JavaScript -->
+                    </tbody>
+                </table>
+            </div>  
+            <div class="controle">
+                <h3>Adicionar Jogador</h3>
+                <div class="inputs">
+                    <input type="text" id="nomeJogador" placeholder="Nome do Jogador" class="campo-input">
+                    <!-- Adicionando um select para as posições -->
+                    <select id="posicaoJogador" class="campo-input">
+                        <option value="Goleiro">Goleiro</option>
+                        <option value="Zagueiro">Zagueiro</option>
+                        <option value="Lateral Direito">Lateral Direito</option>
+                        <option value="Lateral Esquerdo">Lateral Esquerdo</option>
+                        <option value="Meio-Campo">Meio-Campo</option>
+                        <option value="Atacante">Atacante</option>
+                    </select>
+                </div>
+                <button onclick="adicionarJogador()" class="btn">Adicionar Jogador</button>
+            </div>
+        </div>
+
+        <!-- Mesa Tática -->
+        <div class="mesa-tatica">
+            <h2>Mesa Tática</h2>
+            <button id="compartilharButton">Compartilhar</button>
+            <div id="campo" class="campo" ondrop="soltarJogador(event)" ondragover="permitirArrastar(event)">
+                <!-- Aqui a mesa tática será desenhada -->
+            </div>
+        </div>
+        <!-- Aqui vai aparecer a imagem gerada -->
+        <div id="imagemCompartilhar" style="display: none;">
+            <h3>Imagem da Mesa Tática</h3>
+            <img id="imgMesaTatica" src="" alt="Mesa Tática">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
