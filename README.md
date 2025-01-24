@@ -76,6 +76,11 @@ Se você deseja contribuir com o projeto, faça um fork do repositório, crie um
 Este projeto está licenciado sob a [MIT License](LICENSE).
 
 
+## Logo do Projeto
+
+![Logo do Projeto](imagens/logo-projeto.png)
+
+
 
 
 
